@@ -3,6 +3,7 @@
 # Set static IP for Intel Galileo Gen 2 that uses Connman as its Network Manager
 #
 # Author: Paula Moraes
+# Date: 23 Jun 2016
 #
 
 MAC="$(cat /sys/class/net/enp0s20f6/address | cut -d':' -f1-6 --output-delimiter='')"

@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# Set static IP for Intel Galileo Gen 2 that uses Connman as it Network Manager
+# Set static IP for Intel Galileo Gen 2 that uses Connman as its Network Manager
 #
 # Author: Paula Moraes
 #

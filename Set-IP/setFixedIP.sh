@@ -2,7 +2,7 @@
 #
 # Set static IP for Intel Galileo Gen 2 that uses Connman as its Network Manager
 #
-# Author: Paula Moraes
+# Author: pksm
 # Date: 23 Jun 2016
 #
 

@@ -1,0 +1,5 @@
+Include on *.sh file the option to show the current settings for the Ethernet adapter (option -show)
+
+Include on *.sh file the option to connect with current settings for the Ethernet adapter (option -reconnect)
+
+Explain on README that is necessary to run the code again after reboot.

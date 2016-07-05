@@ -21,11 +21,14 @@ error()
 }
 usage()
 {
-        echo "Usage: $PROGRAM [--ipv4] [--help] [--version] [static |dhcp | default] [ip_adress] [netmask] [gateway]"; echo
+        echo "Usage: $PROGRAM [--ipv4] [--help] [--version] [--show] [--reconnect] [static |dhcp | default] [ip_adress] [netmask] [gateway]"; echo
         echo "Examples:" ; echo
         echo $'\t' "scriptName -ipv4 static 192.168.35.12 255.255.255.0 192.168.35.1"; echo
         echo $'\t' "scriptName -ipv4 dhcp"; echo
         echo $'\t' "scriptName -ipv4 default"; echo
+        echo 
+        echo "For reconnection to previous setup settings, use -reconnect"
+        echo $'\t' "scriptName --reconnect"
 }
 usage_and_exit()
 {
@@ -35,6 +38,15 @@ usage_and_exit()
 version()
 {
         echo "$PROGRAM version $VERSION"
+}
+show()
+{
+        cat /var/lib/connman/ethernet_"$(echo $MAC)"_cable/settings
+}
+connectCurrent()
+{
+        show
+        connect
 }
 dhcp_connect()
 {
@@ -74,6 +86,14 @@ case $1 in
                         echo Insufficient parameters supplied to $2 option
                         usage_and_exit
                 fi
+                ;;
+        --show | -show | -s )
+                show
+                exit 0
+                ;;
+        --reconnect | -reconnect | -r )
+                connectCurrent
+                exit 0
                 ;;
         * | -* | --* )
                 error "Unknown option: $1"

@@ -47,7 +47,7 @@ goto inputAdapterName
 
 :checkAdapterName
 	echo.
-	netsh interface ip show address %netName% &&  GOTO confirmAdapter 2>nul GOTO inputAdapterName
+	netsh interface ip show address "%netName%" &&  GOTO confirmAdapter 2>nul GOTO inputAdapterName
 
 :confirmAdapter
 	echo. 
@@ -59,9 +59,9 @@ goto inputAdapterName
 	)
 
 :success	
-	netsh interface ip set address %netName% dhcp && ECHO Success!
+	netsh interface ip set address "%netName%" dhcp && ECHO Success!
 	echo.
 	ECHO Current configuration...
 	echo.
-	netsh interface ip show address %netName%
+	netsh interface ip show address "%netName%"
 	PAUSE 

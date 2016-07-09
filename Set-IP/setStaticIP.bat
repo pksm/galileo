@@ -51,7 +51,7 @@ GOTO inputAdapterName
 
 :checkAdapterName
 	echo.
-	netsh interface ip show address %netName% &&  GOTO confirmAdapter 2>nul GOTO inputAdapterName
+	netsh interface ip show address "%netName%" &&  GOTO confirmAdapter 2>nul GOTO inputAdapterName
 
 :confirmAdapter
 	echo. 
@@ -94,8 +94,7 @@ GOTO inputAdapterName
 
 :changeStatic
 	echo.
-	netsh interface ip show address %netName% > %filepath%
-	netsh interface ip set address %netName% static %ip% %nm% %gw% 
-	ECHO Success...Saved old configuration files on %filepath%
+	netsh interface ip show address "%netName%" > %filepath%
+	netsh interface ip set address "%netName%" static %ip% %nm% %gw% && ECHO Success...Saved old configuration files on %filepath% 2> echo Error while setting static IP
 
 PAUSE 

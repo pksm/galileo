@@ -46,7 +46,7 @@ When running this script you will be prompted to insert your Ethernet Adapter in
 Most of the Ethernet settings has DHCP enabled, which allows the computer to use a dynamic IP provided by the router. 
 If that's your case, you can simply run this file to change back from static mode.
 
-If not, you can run the following code on CMD using the previous saved settings of your Ethernet interface.
+If not, you can run the following code on CMD using the previous saved settings of your Ethernet interface. Your old configuration is an *.txt file on your Desktop.
   ```batch
     netsh interface ip set address Ethernet static saved_ip_address saved_subnetmask saved_default_gateway
   ```

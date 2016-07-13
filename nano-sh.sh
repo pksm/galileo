@@ -9,4 +9,4 @@ do
 	sed -i 's;\\<;\\b;g' $FILE
 	sed -i 's/\\>/\\b/g' $FILE
 done < $FILE
-echo include "/usr/share/nano/sh.nanorc" > ~/.nanorc
+echo include "/usr/share/nano/sh.nanorc" >> ~/.nanorc

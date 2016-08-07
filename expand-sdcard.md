@@ -26,7 +26,7 @@ Apply changes:
 
 `reboot`
 
-Resize filesystem and last reboot:
+Resize filesystem and reboot:
 ```shell
 resize2fs /dev/mmcblk0p2
 reboot
